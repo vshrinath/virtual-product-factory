@@ -2,7 +2,12 @@
 
 **Build at the Speed of Decision.**
 
-The Virtual Product Factory is an autonomous product engineering department in a box. It transforms raw requirements into launched products by grounding agents in a rigorous, role-simulated lifecycle.
+A collection of AI agent skills focused on autonomous product engineering. Built for technical founders, developers, and product managers who want AI coding agents to operate like a structured, high-functioning team—transforming raw requirements into launched products. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports markdown-based context.
+
+Built by [Shrinath V](https://www.linkedin.com/in/shrinathv). Want a deeper dive into the philosophy behind this? Read the manifesto at [Blindspots & Big Bets](https://blindspotsbigbets.substack.com).
+
+**Contributions welcome!** Found a way to improve a skill or have a new one to add? Open a PR.
+Run into a problem or have a question? Open an issue — we're happy to help.
 
 ---
 
@@ -10,11 +15,6 @@ The Virtual Product Factory is an autonomous product engineering department in a
 *One glance at the Factory's capabilities.*
 
 ```text
-                           virtual-product-factory
-                      (Build at the Speed of Decision)
-                                     │
-         ┌───────────────────────────┼───────────────────────────┐
-         ▼                           ▼                           ▼
  ┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────────────┐
  │ 1. PRODUCT OFFICE     │   │ 2. ENGINEERING HUB    │   │ 3. QUALITY & SAFETY   │
  │    (Strategy & UX)    │   │    (Build)            │   │    (Verify & Perf)    │
@@ -24,13 +24,12 @@ The Virtual Product Factory is an autonomous product engineering department in a
  │ @decision-framework   │   │ @api-design           │   │ @testing              │
  │ @ux                   │   │ @data-modeling        │   │ @self-review          │
  │ @accessibility        │   │ @git-workflow         │   │ @performance          │
- └───────────┬───────────┘   └───────────┬───────────┘   │ @frontend-perf        │
-             │                           │               │ @debugging            │
-             │                           │               │ @refactoring          │
-             ▼                           ▼               └───────────┬───────────┘
- ┌───────────────────────┐   ┌───────────────────────┐               │
- │ 4. INFRA LAB          │   │ 5. GROWTH STUDIO      │               │
- │    (Cloud & DevOps)   │   │    (Launch & SEO)     │               ▼
+ └───────────────────────┘   └───────────────────────┘   │ @frontend-perf        │
+                                                         │ @debugging            │
+                                                         │ @refactoring          │
+ ┌───────────────────────┐   ┌───────────────────────┐   └───────────────────────┘
+ │ 4. INFRA LAB          │   │ 5. GROWTH STUDIO      │               
+ │    (Cloud & DevOps)   │   │    (Launch & SEO)     │               
  ├───────────────────────┤   ├───────────────────────┤   ┌───────────────────────┐
  │ @cloud                │   │ @writer               │   │ 6. META OFFICE        │
  │ @cicd                 │   │ @seo                  │   │    (Agent Cognition)  │
@@ -42,6 +41,42 @@ The Virtual Product Factory is an autonomous product engineering department in a
                                                          └───────────────────────┘
 ```
 
+## 📖 The Skills Directory
+*What they do and where to find them.*
+
+| Skill | Department | What it does |
+| :--- | :--- | :--- |
+| **[@pm](product/pm.md)** | Product Office | Defines scope, translates ideas to specs, and explicitly marks what is *out* of scope. |
+| **[@task-decomposition](product/task-decomposition.md)** | Product Office | Breaks large features into small, independently deployable iterative slices. |
+| **[@decision-framework](product/decision-framework.md)** | Product Office | Evaluates technical/product decisions using rigid criteria (Cost, Benefit, Reversible). |
+| **[@ux](design/ux.md)** | Product Office | Enforces UI/UX consistency, mobile-first design, and interactive states. |
+| **[@accessibility](design/accessibility.md)** | Product Office | Ensures semantic HTML, ARIA labels, and keyboard navigation compliance. |
+| **[@arch](coding/arch.md)** | Engineering Hub | Designs the technical blueprint (`tech-spec.md`), choosing architecture and boundaries. |
+| **[@dev](coding/dev.md)** | Engineering Hub | Writes working code following the architecture, prioritizing simplicity and testing. |
+| **[@api-design](coding/api-design.md)** | Engineering Hub | Standardizes REST/GraphQL APIs with strict request/response contracts and error handling. |
+| **[@data-modeling](coding/data-modeling.md)** | Engineering Hub | Designs resilient database schemas, indexes, and normalizes/denormalizes data. |
+| **[@git-workflow](coding/git-workflow.md)** | Engineering Hub | Enforces atomic commits, conventional commit messages, and clean branching. |
+| **[@guard](coding/guard.md)** | Quality Lab | The first line of defense: checks for security, sanity, and convention drift. |
+| **[@qa](coding/qa.md)** | Quality Lab | Writes and executes extreme testing scenarios, hunting for edge cases. |
+| **[@testing](coding/testing.md)** | Quality Lab | Implements the standardized testing frameworks and asserts test coverage. |
+| **[@self-review](coding/self-review.md)** | Quality Lab | Forces the agent to critique its own code *before* declaring a task finished. |
+| **[@performance](coding/performance.md)** | Quality Lab | Optimizes backend execution, algorithmic tradeoffs, and resource allocation. |
+| **[@frontend-perf](coding/frontend-perf.md)** | Quality Lab | Audits bundle sizes, render cycles, and Core Web Vitals. |
+| **[@debugging](coding/debugging.md)** | Quality Lab | Methodical, scientific-method-based approach to isolating and squashing bugs. |
+| **[@refactoring](coding/refactoring.md)** | Quality Lab | CLEANS up debt without changing behavior, aiming for simpler abstractions. |
+| **[@cloud](ops/cloud.md)** | Infra Lab | Designs IaC (Terraform/Bicep), serverless scaling, and cloud security architecture. |
+| **[@cicd](ops/cicd-pipelines.md)** | Infra Lab | Automates GitHub Actions, build matrices, and continuous integration gates. |
+| **[@deployment](ops/deployment-practices.md)** | Infra Lab | Executes safe rollouts (blue/green, canary) and environment synchronizations. |
+| **[@writer](marketing/writer.md)** | Growth Studio | Drafts technical documentation, release notes, and product marketing copy. |
+| **[@seo](marketing/seo.md)** | Growth Studio | Implements technical SEO, semantic metadata, and structured data schemas. |
+| **[@perf](marketing/perf.md)** | Growth Studio | (Marketing Perf) Tracks analytics, conversion hooks, and growth metrics. |
+| **[@video-ai](marketing/video-ai.md)** | Growth Studio | Scripts and generates AI-driven video assets or feature walk-throughs. |
+| **[@video](marketing/video.md)** | Growth Studio | General video editing, pacing, and programmatic video creation (e.g. Remotion). |
+| **[@memory](meta/memory.md)** | Meta Office | Maintains a persistent chronological log (`memory.md`) across multiple agent sessions. |
+| **[@error-recovery](meta/error-recovery.md)** | Meta Office | Steps back when stuck, analyzes failure loops, and proposes alternative solutions. |
+| **[@confidence-scoring](meta/confidence-scoring.md)** | Meta Office | Forces the agent to explicitly state its confidence level before making risky assumptions. |
+| **[@context-strategy](meta/context-strategy.md)** | Meta Office | Optimizes the context window by ruthlessly summarizing and dropping irrelevant files. |
+
 ---
 
 ## ⚡ The Operational Engine
@@ -51,38 +86,33 @@ The Factory operates as a **closed-loop system**. Every prompt initiates a workf
 
 ### 1. The Fuzzy Start (Ideation ➔ Grounding)
 - **Primary Department**: Product Office
-- **Trigger**: "I have a new idea, but I'm not sure where to start."
-- **Workflow**: `Clarify Intent` ➔ `Scope Brief` ➔ `Acceptance Criteria`.
+- **Trigger**: The user provides a vague idea ("I have a new idea, but I'm not sure where to start").
+- **Workflow**: The agent adopts the `@pm` and `@ux` roles to explicitly define the intent, scope out the feature, and determine binary acceptance criteria.
 - **The Result**: A `spec.md` file that defines exactly what "Done" looks like.
-- **Agent Prompt**: *"Initiate **Fuzzy Start**. Using `@pm` and `@ux`, transform this idea into a grounded `spec.md` with binary acceptance criteria."*
 
 ### 2. Architectural Rigor (Blueprint ➔ Implementation)
 - **Primary Department**: Engineering Hub + Quality Lab
-- **Trigger**: "I have a spec and I'm ready to build it."
-- **Workflow**: `Implementation Plan` ➔ `TDD Cycle` ➔ `Self-Review`.
+- **Trigger**: The user provides an approved spec ("I have a spec and I'm ready to build it").
+- **Workflow**: The agent adopts the `@arch` role to draft the system architecture, transitions to `@dev` to implement it sequentially, and finishes by executing `@self-review`.
 - **The Result**: Working code that passes all `getDiagnostics` and local tests.
-- **Agent Prompt**: *"Initiate **Architectural Rigor**. Use `@arch` to design the system, then `@dev` to implement it. Ensure `@self-review` is run before handoff."*
 
 ### 3. The Security Sentry (Audit ➔ Approval)
 - **Primary Department**: Quality & Safety Lab
-- **Trigger**: "The code is written, I need to ensure it's safe to merge."
-- **Workflow**: `Security Audit` ➔ `Convention Check` ➔ `Drift Detection`.
+- **Trigger**: The user requests a pre-merge inspection ("The code is written, I need to ensure it's safe to merge").
+- **Workflow**: The agent adopts the `@guard` role to crawl the latest diffs, scanning strictly for security vulnerabilities, bad boundaries, and convention drift.
 - **The Result**: A `risk-report.md` or a "Pass" score in the pull request.
-- **Agent Prompt**: *"Run the **Security Sentry**. Have `@guard` review the latest diffs for convention drift and security vulnerabilities."*
 
 ### 4. The Growth Engine (Launch ➔ SEO)
 - **Primary Department**: Growth Studio
-- **Trigger**: "The feature is verified. Let's tell the world."
-- **Workflow**: `Technical Audit` ➔ `SEO Strategy` ➔ `Content Generation`.
+- **Trigger**: The user desires a public push ("The feature is verified. Let's tell the world").
+- **Workflow**: The agent assumes the `@seo` role to optimize route metadata, and uses the `@writer` role to draft marketing launch materials or release notes.
 - **The Result**: Meta tags implemented + Launch blog/newsletter drafted.
-- **Agent Prompt**: *"Trigger the **Growth Engine**. Use `@seo` to optimize the new routes and `@writer` to draft the release notes and a 'Why we built this' article."*
 
 ### 5. The Deploy Loop (Verification ➔ Live)
 - **Primary Department**: Infra Lab
-- **Trigger**: "Everything is approved. Deploy to staging/production."
-- **Workflow**: `CI/CD Trigger` ➔ `Smoke Test` ➔ `Infrastructure Sync`.
+- **Trigger**: The user authorizes production push ("Everything is approved. Deploy to staging/production").
+- **Workflow**: The agent consults `deployment-practices` and `@cloud` frameworks to execute the deployment pipelines, verify the live environment, and sync any infrastructure-as-code adjustments.
 - **The Result**: A live URL + "Deployment Successful" status.
-- **Agent Prompt**: *"Execute the **Deploy Loop**. Follow the `deployment-practices` to sync infra changes and verify the build on staging."*
 
 ---
 
