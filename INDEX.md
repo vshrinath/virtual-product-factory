@@ -72,8 +72,8 @@
 
 | Skill | File | Use when | Transferability |
 |-------|------|----------|----------------|
-| — | `ops/deployment-practices.md` | Universal deployment principles (any stack) | 100% |
-| — | `ops/cicd-pipelines.md` | GitHub Actions CI/CD setup and configuration | 95% |
+| `@deployment` | `ops/deployment-practices.md` | Universal deployment principles (any stack) | 100% |
+| `@cicd` | `ops/cicd-pipelines.md` | GitHub Actions CI/CD setup and configuration | 95% |
 | `@cloud` | `ops/cloud.md` | Infrastructure architecture, IaC, cloud security | 90% |
 
 ### 5. Growth Studio (Launch \u0026 SEO)
@@ -198,18 +198,9 @@ git submodule add https://github.com/vshrinath/virtual-product-factory.git skill
 git submodule update --init
 
 # Load core skills for any project
-echo "Skills available: @pm @task-decomposition @decision-framework @arch @dev @guard @qa @self-review @debugging @refactoring @api-design @data-modeling @performance @frontend-perf @testing @video-ai @writer @seo @perf @ux @accessibility @cloud @memory"
+echo "Skills available: @pm @task-decomposition @decision-framework @arch @dev @guard @qa @self-review @debugging @refactoring @api-design @data-modeling @performance @frontend-perf @testing @video-ai @writer @seo @perf @ux @accessibility @deployment @cicd @cloud @memory"
 ```
 
 ---
 
-## Related AI Skills & Resources
-
-External libraries and reference material.
-
-| Resource | Description | Source |
-|----------|-------------|--------|
-| **[marketingskills](https://github.com/coreyhaines31/marketingskills)** | Granular marketing skills for AI agents. | [GitHub](https://github.com/coreyhaines31/marketingskills) |
-| **[AI Skills & Reference](https://notebooklm.google.com/notebook/4aa485e0-c976-44d2-8ced-2e6c90c68ce5)** | Curated NotebookLM vault for deep AI references. | [NotebookLM](https://notebooklm.google.com/notebook/4aa485e0-c976-44d2-8ced-2e6c90c68ce5) |
-
----
+MIT License • 2026 The Virtual Product Factory

@@ -11,43 +11,20 @@ The Virtual Product Factory is an autonomous product engineering department in a
 
 ```mermaid
 graph TD
-    %% Departments
-    subgraph PO ["1. PRODUCT OFFICE<br/>(Strategy \u0026 UX)"]
-        S1["@pm<br/>@task-decomposition<br/>@decision-framework<br/>@ux @accessibility"]
-    end
+    PO[1. PRODUCT OFFICE] --> EH[2. ENGINEERING HUB]
+    PO --> IL[4. INFRA LAB]
+    EH --> QL[3. QUALITY LAB]
+    IL --> GS[5. GROWTH STUDIO]
+    GS --> MO[6. META OFFICE]
+    QL --> EH
 
-    subgraph EH ["2. ENGINEERING HUB<br/>(Build)"]
-        S2["@arch<br/>@dev<br/>@api-design<br/>@data-modeling<br/>@git-workflow"]
-    end
-
-    subgraph QL ["3. QUALITY \u0026 SAFETY LAB<br/>(Verification \u0026 Perf)"]
-        S3["@guard @qa<br/>@testing @self-review<br/>@performance @frontend-perf<br/>@debugging @refactoring"]
-    end
-
-    subgraph IL ["4. INFRA LAB<br/>(Cloud \u0026 DevOps)"]
-        S4["@cloud<br/>cicd-pipelines<br/>deployment-practices"]
-    end
-
-    subgraph GS ["5. GROWTH STUDIO<br/>(Launch \u0026 SEO)"]
-        S5["@writer<br/>@seo<br/>@perf<br/>@video-ai<br/>@video"]
-    end
-
-    subgraph MO ["6. META OFFICE<br/>(Agent Cognition)"]
-        S6["@memory<br/>@error-recovery<br/>@confidence-scoring<br/>@context-strategy"]
-    end
-
-    %% Positioning
-    PO --- EH --- QL
-    IL --- GS --- MO
-    PO --- IL
-
-    %% Styling
-    style PO fill:#f9f,stroke:#333,stroke-width:2px
-    style EH fill:#bbf,stroke:#333,stroke-width:2px
-    style QL fill:#fbb,stroke:#333,stroke-width:2px
-    style IL fill:#eee,stroke:#333,stroke-width:2px
-    style GS fill:#bfb,stroke:#333,stroke-width:2px
-    style MO fill:#fdb,stroke:#333,stroke-width:2px
+    %% Skills Lists
+    PO --- S1("@pm, @task-decomposition, @decision-framework, @ux, @accessibility")
+    EH --- S2("@arch, @dev, @api-design, @data-modeling, @git-workflow")
+    QL --- S3("@guard, @qa, @testing, @self-review, @performance, @debugging, @refactoring")
+    IL --- S4("@cloud, @cicd, @deployment")
+    GS --- S5("@writer, @seo, @perf, @video-ai, @video")
+    MO --- S6("@memory, @error-recovery, @confidence-scoring, @context-strategy")
 ```
 
 ---
