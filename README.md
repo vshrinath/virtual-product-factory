@@ -6,100 +6,113 @@ The Virtual Product Factory is an autonomous product engineering department in a
 
 ---
 
-## ❓ What are Skills?
-
-Skills are high-signal markdown files that provide AI agents (Cursor, Windsurf, Claude, etc.) with **specialized knowledge, expert workflows, and guardrails**.
-
-Standard LLMs are generalists. Adding these skills to your project workspace transforms them into **specialists** who:
-- **Simulate Roles**: They act as PMs, Architects, or SEO experts based on the task.
-- **Enforce Rigor**: They follow established best practices (TDD, safety reviews, decomposition).
-- **Maintain Context**: They know *how* to build within the boundaries of your **CONVENTIONS.md**.
-
----
-
 ## 🏗️ Departmental Overview
 *One glance at the Factory's capabilities.*
 
 ```mermaid
 graph TD
     %% Departments
-    subgraph PO ["PRODUCT OFFICE"]
-        S1["@pm<br/>@task-decomposition<br/>@decision-framework"]
+    subgraph PO ["1. PRODUCT OFFICE<br/>(Strategy \u0026 UX)"]
+        S1["@pm<br/>@task-decomposition<br/>@decision-framework<br/>@ux @accessibility"]
     end
 
-    subgraph EH ["ENGINEERING HUB"]
-        S2["@arch<br/>@dev<br/>@qa<br/>@guard<br/>@git-workflow<br/>@debugging<br/>@refactoring"]
-        S2B["@api-design<br/>@data-modeling<br/>@performance<br/>@frontend-perf<br/>@testing<br/>@self-review"]
+    subgraph EH ["2. ENGINEERING HUB<br/>(Build)"]
+        S2["@arch<br/>@dev<br/>@api-design<br/>@data-modeling<br/>@git-workflow"]
     end
 
-    subgraph GS ["GROWTH STUDIO"]
-        S3["@writer<br/>@seo<br/>@perf<br/>@video-ai<br/>@video"]
+    subgraph QL ["3. QUALITY \u0026 SAFETY LAB<br/>(Verification \u0026 Perf)"]
+        S3["@guard @qa<br/>@testing @self-review<br/>@performance @frontend-perf<br/>@debugging @refactoring"]
     end
 
-    subgraph MO ["META OFFICE"]
-        S4["@memory<br/>@error-recovery<br/>@confidence-scoring<br/>@context-strategy"]
+    subgraph IL ["4. INFRA LAB<br/>(Cloud \u0026 DevOps)"]
+        S4["@cloud<br/>cicd-pipelines<br/>deployment-practices"]
     end
 
-    subgraph DX ["DESIGN \u0026 OPS"]
-        S5["@ux<br/>@accessibility<br/>@cloud<br/>cicd-pipelines<br/>deployment-practices"]
+    subgraph GS ["5. GROWTH STUDIO<br/>(Launch \u0026 SEO)"]
+        S5["@writer<br/>@seo<br/>@perf<br/>@video-ai<br/>@video"]
+    end
+
+    subgraph MO ["6. META OFFICE<br/>(Agent Cognition)"]
+        S6["@memory<br/>@error-recovery<br/>@confidence-scoring<br/>@context-strategy"]
     end
 
     %% Positioning
-    PO --- EH
-    EH --- GS
-    MO --- DX
-    PO --- MO
-    GS --- DX
+    PO --- EH --- QL
+    IL --- GS --- MO
+    PO --- IL
 
     %% Styling
     style PO fill:#f9f,stroke:#333,stroke-width:2px
     style EH fill:#bbf,stroke:#333,stroke-width:2px
+    style QL fill:#fbb,stroke:#333,stroke-width:2px
+    style IL fill:#eee,stroke:#333,stroke-width:2px
     style GS fill:#bfb,stroke:#333,stroke-width:2px
     style MO fill:#fdb,stroke:#333,stroke-width:2px
-    style DX fill:#eee,stroke:#333,stroke-width:2px
 ```
 
 ---
 
-## ⚡ Operational Playbooks (The Flow)
+## ⚡ The Operational Engine
+*How to drive the Factory from Start to Finish.*
 
-How the Factory moves from ideation to launch.
+The Factory operates as a **closed-loop system**. Every prompt initiates a workflow that doesn't end until a **Baton of State** (Artifact) is verified and committed.
 
-### 1. The Fuzzy Start (Ideation ➔ Backlog)
-The **Product Office** grounds loose requirements into a structured backlog using `@pm` and `@task-decomposition`.
+### 1. The Fuzzy Start (Ideation ➔ Grounding)
+- **Primary Department**: Product Office
+- **Trigger**: "I have a new idea, but I'm not sure where to start."
+- **Workflow**: `Clarify Intent` ➔ `Scope Brief` ➔ `Acceptance Criteria`.
+- **The Result**: A `spec.md` file that defines exactly what "Done" looks like.
+- **Agent Prompt**: *"Initiate **Fuzzy Start**. Using `@pm` and `@ux`, transform this idea into a grounded `spec.md` with binary acceptance criteria."*
 
-```mermaid
-graph LR
-    FUZ[("Fuzzy<br/>Requirement")] --> PM["@pm"] --> DEC{"Trade-offs?"}
-    DEC -- Yes --> DF["@decision-framework"] --> PM
-    DEC -- No --> TDC["@task-decomposition"] --> BACKLOG[("Grounded<br/>Backlog")]
-```
+### 2. Architectural Rigor (Blueprint ➔ Implementation)
+- **Primary Department**: Engineering Hub + Quality Lab
+- **Trigger**: "I have a spec and I'm ready to build it."
+- **Workflow**: `Implementation Plan` ➔ `TDD Cycle` ➔ `Self-Review`.
+- **The Result**: Working code that passes all `getDiagnostics` and local tests.
+- **Agent Prompt**: *"Initiate **Architectural Rigor**. Use `@arch` to design the system, then `@dev` to implement it. Ensure `@self-review` is run before handoff."*
 
-### 2. Architectural Rigor (Blueprint ➔ TDD)
-The **Engineering Hub** architects the solution (`@arch`), creates a test plan (`@qa`), and builds via TDD (`@dev`).
+### 3. The Security Sentry (Audit ➔ Approval)
+- **Primary Department**: Quality & Safety Lab
+- **Trigger**: "The code is written, I need to ensure it's safe to merge."
+- **Workflow**: `Security Audit` ➔ `Convention Check` ➔ `Drift Detection`.
+- **The Result**: A `risk-report.md` or a "Pass" score in the pull request.
+- **Agent Prompt**: *"Run the **Security Sentry**. Have `@guard` review the latest diffs for convention drift and security vulnerabilities."*
 
-```mermaid
-graph LR
-    BACKLOG --> ARC["@arch"] --> CONV["CONVENTIONS.md"] --> QA["@qa"] --> DEV["@dev"] --> GDR["@guard"] --> CODE[("Verified Code")]
-```
+### 4. The Growth Engine (Launch ➔ SEO)
+- **Primary Department**: Growth Studio
+- **Trigger**: "The feature is verified. Let's tell the world."
+- **Workflow**: `Technical Audit` ➔ `SEO Strategy` ➔ `Content Generation`.
+- **The Result**: Meta tags implemented + Launch blog/newsletter drafted.
+- **Agent Prompt**: *"Trigger the **Growth Engine**. Use `@seo` to optimize the new routes and `@writer` to draft the release notes and a 'Why we built this' article."*
 
-### 3. The Growth Engine (Code ➔ Market)
-The **Growth Studio** handles the transition from "code complete" to "market ready" via `@writer`, `@seo`, and marketing assets.
+### 5. The Deploy Loop (Verification ➔ Live)
+- **Primary Department**: Infra Lab
+- **Trigger**: "Everything is approved. Deploy to staging/production."
+- **Workflow**: `CI/CD Trigger` ➔ `Smoke Test` ➔ `Infrastructure Sync`.
+- **The Result**: A live URL + "Deployment Successful" status.
+- **Agent Prompt**: *"Execute the **Deploy Loop**. Follow the `deployment-practices` to sync infra changes and verify the build on staging."*
 
-```mermaid
-graph TD
-    CODE --> WRT["@writer"] --> SEO["@seo"] --> PERF["@perf"] --> VID["@video-ai"] --> LAUNCH[("Market Launch")]
-```
+---
+
+## 🤝 The Handoff Protocol
+
+Each transition between departments is powered by a **Handoff Artifact**.
+
+| Handoff | The "Baton" (Artifact) | Explicit Output |
+| :--- | :--- | :--- |
+| **Product ➔ Arch** | `spec.md` | Scoped features + Acceptance criteria. |
+| **Arch ➔ Dev** | `tech-spec.md` | Model schemas + Service boundaries. |
+| **Dev ➔ Guard** | `implementation.diff` | Working code + Verification proof. |
+| **Guard ➔ QA** | `risk-report.md` | Audited code + Performance metrics. |
 
 ---
 
 ## 🦾 Integration & Onboarding
 
 ### 1. Production Method: Git Submodule (Recommended)
-Add the factory as a submodule for project-specific version control and easy updates.
+Add the factory as a submodule for project-specific version control.
 
 ```bash
-# Add the factory to your project
 git submodule add https://github.com/vshrinath/virtual-product-factory.git .vpf
 git submodule update --init --recursive
 ```
@@ -111,19 +124,12 @@ Use the setup script for rapid prototyping or global utility.
 curl -sSL https://raw.githubusercontent.com/vshrinath/virtual-product-factory/main/setup.sh | bash
 ```
 
-### 🛠️ How `setup.sh` Works
-The script **symlinks** the factory's canonical rules into your agent's configuration:
-- **Cursor**: Symlinks to `.cursorrules`.
-- **Windsurf**: Symlinks to `.windsurfrules`.
-- **General**: Connects any agent to your **AGENTS.md** steering layer.
-
 ---
 
 ## 🗺️ Navigation
+- **[AGENTS.md](AGENTS.md)**: The full operational manual and rules.
 - **[CONVENTIONS.md](CONVENTIONS.md)**: Your project's unique "Source of Truth."
-- **[AGENTS.md](AGENTS.md)**: The principles and handoff rules for your factory.
-- **[INDEX.md](INDEX.md)**: A complete technical reference of all 28+ skills.
-- **[CHANGELOG.md](CHANGELOG.md)**: Record of factory updates and improvements.
+- **[INDEX.md](INDEX.md)**: Technical reference of all 28+ skills.
 
 ---
 

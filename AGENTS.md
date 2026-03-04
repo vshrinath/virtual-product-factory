@@ -303,47 +303,48 @@ When renaming or retiring a skill:
 - Mark deprecated aliases explicitly with the replacement skill and removal version
 - Remove deprecated aliases only after the announced version window
 
-### Available Skills by Domain
+### Available Skills by Department
 
-**Product & Planning** — `skills/product/`:
+**1. Product Office (Strategy \u0026 UX)** — `skills/product/` \u0026 `skills/design/`:
 - `@pm` — Feature scoping, requirements, acceptance criteria (includes defining "done")
-- `@task-decomposition` — Breaking features into small, testable tasks (includes decomposition and verification)
+- `@task-decomposition` — Breaking features into small, testable tasks
 - `@decision-framework` — Architecture decisions, build vs. buy, technical debt
+- `@ux` — User flows, component states, accessibility, form design
+- `@accessibility` — Semantic HTML, ARIA, keyboard navigation
 
-**Coding** — `skills/coding/`:
+**2. Engineering Hub (Architecture \u0026 Build)** — `skills/coding/`:
 - `@arch` — Architectural decisions, system design, service boundaries
-- `@dev` — Any implementation task — backend, frontend, or both
-- `@git-workflow` — Commit messages, changelog maintenance, file organization
-- `@guard` — Code review, security audit, convention drift check
-- `@qa` — Testing, edge cases, regression verification
-- `@self-review` — Pre-handoff quality check before requesting code review
-- `@debugging` — Bug investigation, intermittent failures, root cause analysis
-- `@refactoring` — Code smells, safe structural cleanup, tech debt reduction
+- `@dev` — Implementation: backend, frontend, search indexing, SEO metadata
 - `@api-design` — Designing or reviewing API endpoints and contracts
 - `@data-modeling` — Schema design, model relationships, migrations
-- `@performance` — Backend performance: slow queries, caching, API optimization
-- `@frontend-perf` — Frontend performance: Core Web Vitals, bundle size, image optimization
-- `@testing` — Testing strategy, TDD, mocking, test types
+- `@git-workflow` — Commit messages, changelog maintenance, file organization
 
-**Marketing** — `skills/marketing/`:
-- `@video-ai` — AI video generation with cinematography knowledge
-- `@video` — Remotion-specific video production (React/TypeScript compositions)
-- `@writer` — Articles, newsletters, social posts, email campaigns
-- `@seo` — Meta tags, structured data, technical SEO
-- `@perf` — Ad copy, landing pages, UTM tracking, A/B tests
+**3. Quality \u0026 Safety Lab (Verification \u0026 Perf)** — `skills/coding/`:
+- `@guard` — Code review, security audit, convention drift check
+- `@qa` — Testing, edge cases, regression verification
+- `@self-review` — Pre-handoff quality check
+- `@debugging` — Bug investigation, root cause analysis
+- `@refactoring` — Code smells, safe structural cleanup
+- `@performance` — Backend performance: slow queries, caching
+- `@frontend-perf` — Frontend performance: Web Vitals, bundle size
+- `@testing` — Testing strategy, TDD, mocking
 
-**Design** — `skills/design/`:
-- `@ux` — User flows, component states, accessibility, form design
-- `@accessibility` — Semantic HTML, ARIA, keyboard navigation, WCAG compliance
-
-**Operations** — `skills/ops/`:
+**4. Infra Lab (Cloud \u0026 DevOps)** — `skills/ops/`:
 - `deployment-practices` — Universal deployment principles
 - `cicd-pipelines` — GitHub Actions CI/CD setup
 - `@cloud` — Infrastructure architecture, IaC, cloud security
 
-**Meta (Autonomous Operation)** — `skills/meta/`:
-- `@confidence-scoring` — Assessing confidence level, determining when to ask for help
-- `@context-strategy` — Managing limited context window, efficient file navigation (see this for context discipline)
+**5. Growth Studio (Launch \u0026 SEO)** — `skills/marketing/`:
+- `@writer` — Articles, newsletters, social posts, email campaigns
+- `@seo` — Meta tags, structured data, technical SEO
+- `@perf` — Ad copy, landing pages, UTM tracking, A/B tests
+- `@video-ai` — AI video generation (Runway, Kling, fal.ai)
+- `@video` — Remotion-specific video production
+
+**6. Meta Office (Agent Cognition)** — `skills/meta/`:
+- `@memory` — Persisting state and execution plans across sessions
+- `@confidence-scoring` — Assessing confidence level and risk
+- `@context-strategy` — Efficient file navigation and context management
 - `@error-recovery` — Handling test/build/deployment failures autonomously
 
 ### Workflow Examples

@@ -35,65 +35,65 @@
 
 ## All Skills
 
-### Product & Planning
+### 1. Product Office (Strategy \u0026 UX)
 
 | Skill | File | Use when | Transferability |
 |-------|------|----------|----------------|
 | `@pm` | `product/pm.md` | Feature scoping, requirements, acceptance criteria | 100% |
 | `@task-decomposition` | `product/task-decomposition.md` | Breaking features into small, testable tasks with dependencies | 100% |
-| `@decision-framework` | `product/decision-framework.md` | Architecture decisions, build vs. buy, technical debt, any high-stakes decision with unclear tradeoffs | 100% |
+| `@decision-framework` | `product/decision-framework.md` | Architecture decisions, high-stakes trade-offs | 100% |
+| `@ux` | `design/ux.md` | User flows, component states, form design | 90% |
+| `@accessibility` | `design/accessibility.md` | Semantic HTML, ARIA, WCAG compliance | 95% |
 
-### Meta (Autonomous Operation)
-
-| Skill | File | Use when | Transferability |
-|-------|------|----------|----------------|
-| `@confidence-scoring` | `meta/confidence-scoring.md` | Assessing confidence level, determining when to ask for help | 100% |
-| `@context-strategy` | `meta/context-strategy.md` | Managing limited context window, efficient file navigation | 100% |
-| `@error-recovery` | `meta/error-recovery.md` | Handling test/build/deployment failures autonomously | 100% |
-| `@memory` | `meta/memory.md` | Persisting state and execution plans across long sessions using a working buffer | 100% |
-
-### Coding
+### 2. Engineering Hub (Architecture \u0026 Build)
 
 | Skill | File | Use when | Transferability |
 |-------|------|----------|----------------|
 | `@arch` | `coding/arch.md` | Architectural decisions, system design, service boundaries | 90% |
 | `@dev` | `coding/dev.md` | Any implementation task — backend, frontend, or both | 90% |
+| `@api-design` | `coding/api-design.md` | Designing or reviewing API endpoints and contracts | 90% |
+| `@data-modeling` | `coding/data-modeling.md` | Schema design, model relationships, migrations | 90% |
 | `@git-workflow` | `coding/git-workflow.md` | Commit messages, changelog maintenance, file organization | 100% |
+
+### 3. Quality \u0026 Safety Lab (Verification \u0026 Perf)
+
+| Skill | File | Use when | Transferability |
+|-------|------|----------|----------------|
 | `@guard` | `coding/guard.md` | Code review, security audit, convention drift check | 95% |
 | `@qa` | `coding/qa.md` | Testing, edge cases, regression verification | 95% |
 | `@self-review` | `coding/self-review.md` | Pre-handoff quality check before requesting code review | 95% |
-| `@debugging` | `coding/debugging.md` | Bug investigation, intermittent failures, root cause analysis | 95% |
-| `@refactoring` | `coding/refactoring.md` | Code smells, safe structural cleanup, tech debt reduction | 95% |
-| `@api-design` | `coding/api-design.md` | Designing or reviewing API endpoints and contracts | 90% |
-| `@data-modeling` | `coding/data-modeling.md` | Schema design, model relationships, migrations | 90% |
-| `@performance` | `coding/performance.md` | Backend performance: slow queries, caching, API optimization | 90% |
-| `@frontend-perf` | `coding/frontend-performance.md` | Frontend performance: Core Web Vitals, bundle size, image optimization | 95% |
-| `@testing` | `coding/testing.md` | Testing strategy, TDD, mocking, unit/integration/E2E tests | 95% |
+| `@debugging` | `coding/debugging.md` | Bug investigation and root cause analysis | 95% |
+| `@performance` | `coding/performance.md` | Backend performance and caching | 90% |
+| `@frontend-perf` | `coding/frontend-performance.md` | Frontend performance and Web Vitals | 95% |
+| `@testing` | `coding/testing.md` | Testing strategy, TDD, mocking | 95% |
+| `@refactoring` | `coding/refactoring.md` | Code smells and structural cleanup | 95% |
 
-### Marketing
-
-| Skill | File | Use when | Transferability |
-|-------|------|----------|----------------|
-| `@video-ai` | `marketing/video-ai.md` | AI video generation with cinematography knowledge (Runway, Pika, Luma, Kling, fal.ai) | 100% |
-| `@video` | `marketing/video.md` | Remotion video production (requires React/TypeScript) | Remotion-specific |
-| `@writer` | `marketing/writer.md` | Articles, newsletters, social posts, email campaigns | 95% |
-| `@seo` | `marketing/seo.md` | Meta tags, structured data, technical SEO | 90% |
-| `@perf` | `marketing/perf.md` | Ad copy, landing pages, UTM tracking, A/B tests | 85% |
-
-### Design
-
-| Skill | File | Use when | Transferability |
-|-------|------|----------|----------------|
-| `@ux` | `design/ux.md` | User flows, component states, accessibility, form design | 90% |
-| `@accessibility` | `design/accessibility.md` | Semantic HTML, ARIA, keyboard navigation, WCAG compliance | 95% |
-
-### Operations
+### 4. Infra Lab (Cloud \u0026 DevOps)
 
 | Skill | File | Use when | Transferability |
 |-------|------|----------|----------------|
 | — | `ops/deployment-practices.md` | Universal deployment principles (any stack) | 100% |
 | — | `ops/cicd-pipelines.md` | GitHub Actions CI/CD setup and configuration | 95% |
 | `@cloud` | `ops/cloud.md` | Infrastructure architecture, IaC, cloud security | 90% |
+
+### 5. Growth Studio (Launch \u0026 SEO)
+
+| Skill | File | Use when | Transferability |
+|-------|------|----------|----------------|
+| `@writer` | `marketing/writer.md` | Articles, newsletters, social posts, campaigns | 95% |
+| `@seo` | `marketing/seo.md` | Meta tags, structured data, technical SEO | 90% |
+| `@perf` | `marketing/perf.md` | Ad copy, landing pages, UTM tracking | 85% |
+| `@video-ai` | `marketing/video-ai.md` | AI video generation (Runway, Kling, fal.ai) | 100% |
+| `@video` | `marketing/video.md` | Remotion video production | Remotion-spec |
+
+### 6. Meta Office (Agent Cognition)
+
+| Skill | File | Use when | Transferability |
+|-------|------|----------|----------------|
+| `@memory` | `meta/memory.md` | Persisting state and plans across long sessions | 100% |
+| `@confidence-scoring` | `meta/confidence-scoring.md` | Assessing confidence level and risk | 100% |
+| `@context-strategy` | `meta/context-strategy.md` | Managing limited context window | 100% |
+| `@error-recovery` | `meta/error-recovery.md` | Handling failures autonomously | 100% |
 
 ---
 
