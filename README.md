@@ -17,59 +17,86 @@ Standard LLMs are generalists. Adding these skills to your project workspace tra
 
 ---
 
-## 🏗️ The Factory Overview
-
-The Factory is organized into specialized "Departments." Each department coordinates a set of autonomous skills to move your product through the value chain.
+## 🏗️ Departmental Overview
+*One glance at the Factory's capabilities.*
 
 ```mermaid
 graph TD
-    subgraph FACTORY ["THE VIRTUAL PRODUCT FACTORY"]
-        direction TB
-        PO["PRODUCT OFFICE<br/>(Planning \u0026 Scoping)"]
-        EH["ENGINEERING HUB<br/>(Build \u0026 Quality)"]
-        GS["GROWTH STUDIO<br/>(Launch \u0026 SEO)"]
-        MO["META OFFICE<br/>(Autonomous Operations)"]
+    %% Departments
+    subgraph PO ["PRODUCT OFFICE"]
+        S1["@pm<br/>@task-decomposition<br/>@decision-framework"]
     end
 
-    %% Skills Mapping
-    PO --- S1["@pm<br/>@task-decomposition<br/>@decision-framework"]
-    EH --- S2["@arch<br/>@dev @qa<br/>@guard @refactoring"]
-    GS --- S3["@writer<br/>@seo @perf<br/>@video-ai"]
-    MO --- S4["@memory<br/>@error-recovery<br/>@confidence-scoring"]
+    subgraph EH ["ENGINEERING HUB"]
+        S2["@arch<br/>@dev<br/>@qa<br/>@guard<br/>@git-workflow<br/>@debugging<br/>@refactoring"]
+        S2B["@api-design<br/>@data-modeling<br/>@performance<br/>@frontend-perf<br/>@testing<br/>@self-review"]
+    end
 
-    %% Flow
-    FUZ[("Fuzzy<br/>Requirement")] ==> PO
-    PO ==> EH
-    EH ==> GS
-    GS ==> LAUNCH[("Market-Ready<br/>Product")]
+    subgraph GS ["GROWTH STUDIO"]
+        S3["@writer<br/>@seo<br/>@perf<br/>@video-ai<br/>@video"]
+    end
+
+    subgraph MO ["META OFFICE"]
+        S4["@memory<br/>@error-recovery<br/>@confidence-scoring<br/>@context-strategy"]
+    end
+
+    subgraph DX ["DESIGN \u0026 OPS"]
+        S5["@ux<br/>@accessibility<br/>@cloud<br/>cicd-pipelines<br/>deployment-practices"]
+    end
+
+    %% Positioning
+    PO --- EH
+    EH --- GS
+    MO --- DX
+    PO --- MO
+    GS --- DX
+
+    %% Styling
+    style PO fill:#f9f,stroke:#333,stroke-width:2px
+    style EH fill:#bbf,stroke:#333,stroke-width:2px
+    style GS fill:#bfb,stroke:#333,stroke-width:2px
+    style MO fill:#fdb,stroke:#333,stroke-width:2px
+    style DX fill:#eee,stroke:#333,stroke-width:2px
 ```
 
 ---
 
-## ⚡ Operational Playbooks
+## ⚡ Operational Playbooks (The Flow)
 
-The Factory uses three primary playbooks to manage the product lifecycle.
+How the Factory moves from ideation to launch.
 
 ### 1. The Fuzzy Start (Ideation ➔ Backlog)
-*Handles: Vague requests and feature "asks."*
-The **Product Office** analyzes the goal, handles technical trade-offs via `@decision-framework`, and decomposes the request into a list of atomic, testable tasks.
+The **Product Office** grounds loose requirements into a structured backlog using `@pm` and `@task-decomposition`.
+
+```mermaid
+graph LR
+    FUZ[("Fuzzy<br/>Requirement")] --> PM["@pm"] --> DEC{"Trade-offs?"}
+    DEC -- Yes --> DF["@decision-framework"] --> PM
+    DEC -- No --> TDC["@task-decomposition"] --> BACKLOG[("Grounded<br/>Backlog")]
+```
 
 ### 2. Architectural Rigor (Blueprint ➔ TDD)
-*Handles: New features and system upgrades.*
-The **Engineering Hub** creates a technical blueprint (`@arch`), establishes a test plan (`@qa`), and then builds via TDD (`@dev`). A final safety review (`@guard`) ensures zero convention drift.
+The **Engineering Hub** architects the solution (`@arch`), creates a test plan (`@qa`), and builds via TDD (`@dev`).
+
+```mermaid
+graph LR
+    BACKLOG --> ARC["@arch"] --> CONV["CONVENTIONS.md"] --> QA["@qa"] --> DEV["@dev"] --> GDR["@guard"] --> CODE[("Verified Code")]
+```
 
 ### 3. The Growth Engine (Code ➔ Market)
-*Handles: Content marketing and SEO.*
-The **Growth Studio** handles the transition from "code complete" to "market ready." It generates SEO-grounded copy (`@writer`, `@seo`) and marketing assets (`@perf`, `@video-ai`).
+The **Growth Studio** handles the transition from "code complete" to "market ready" via `@writer`, `@seo`, and marketing assets.
+
+```mermaid
+graph TD
+    CODE --> WRT["@writer"] --> SEO["@seo"] --> PERF["@perf"] --> VID["@video-ai"] --> LAUNCH[("Market Launch")]
+```
 
 ---
 
 ## 🦾 Integration & Onboarding
 
-There are two primary ways to bring the Virtual Product Factory into your workflow.
-
 ### 1. Production Method: Git Submodule (Recommended)
-For long-term project stability, add the factory as a submodule. This ensures your agents always have access to the latest skills while maintaining version control.
+Add the factory as a submodule for project-specific version control and easy updates.
 
 ```bash
 # Add the factory to your project
@@ -78,17 +105,17 @@ git submodule update --init --recursive
 ```
 
 ### 2. Quick Start: Curl
-Use the setup script for one-off tasks or rapid prototyping.
+Use the setup script for rapid prototyping or global utility.
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vshrinath/virtual-product-factory/main/setup.sh | bash
 ```
 
 ### 🛠️ How `setup.sh` Works
-The setup script detects your environment and **symlinks** the relevant skill files into your agent-specific configuration paths:
-- **Cursor**: Symlinks to `.cursorrules` or `.cursor/rules/`.
+The script **symlinks** the factory's canonical rules into your agent's configuration:
+- **Cursor**: Symlinks to `.cursorrules`.
 - **Windsurf**: Symlinks to `.windsurfrules`.
-- **General**: Creates global grounding for Claude Code and other agents.
+- **General**: Connects any agent to your **AGENTS.md** steering layer.
 
 ---
 
@@ -96,6 +123,7 @@ The setup script detects your environment and **symlinks** the relevant skill fi
 - **[CONVENTIONS.md](CONVENTIONS.md)**: Your project's unique "Source of Truth."
 - **[AGENTS.md](AGENTS.md)**: The principles and handoff rules for your factory.
 - **[INDEX.md](INDEX.md)**: A complete technical reference of all 28+ skills.
+- **[CHANGELOG.md](CHANGELOG.md)**: Record of factory updates and improvements.
 
 ---
 
