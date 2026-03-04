@@ -5,7 +5,7 @@
 
 set -e
 
-REPO_URL="https://github.com/vshrinath/ai-core-skills.git"
+REPO_URL="https://github.com/vshrinath/virtual-product-factory.git"
 SKILLS_DIR="skills"
 IS_SOURCE_REPO=false
 
@@ -40,12 +40,12 @@ check_git_repo() {
     fi
 }
 
-# Check if we're in the ai-core-skills source repo
+# Check if we're in the virtual-product-factory source repo
 check_source_repo() {
     if [ -d "coding" ] && [ -d "product" ] && [ -d "marketing" ] && [ -d "design" ] && [ -d "meta" ] && [ -d "ops" ]; then
         if [ -f "INDEX.md" ] && [ -f "AGENTS.md" ]; then
             IS_SOURCE_REPO=true
-            print_status "Detected ai-core-skills source repository"
+            print_status "Detected virtual-product-factory source repository"
         fi
     fi
 }
@@ -242,7 +242,7 @@ main() {
                 echo "  $0 --clone                            # Clone skills, setup all tools"
                 echo "  $0 --tools kiro                       # Setup Kiro only"
                 echo
-                echo "Note: When run in the ai-core-skills source repo, submodule/clone is skipped."
+                echo "Note: When run in the virtual-product-factory source repo, submodule/clone is skipped."
                 exit 0
                 ;;
             *)

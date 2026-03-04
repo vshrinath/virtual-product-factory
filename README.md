@@ -73,7 +73,7 @@ For long-term project stability, add the factory as a submodule. This ensures yo
 
 ```bash
 # Add the factory to your project
-git submodule add https://github.com/vshrinath/ai-core-skills.git .vpf
+git submodule add https://github.com/vshrinath/virtual-product-factory.git .vpf
 git submodule update --init --recursive
 ```
 
@@ -81,7 +81,7 @@ git submodule update --init --recursive
 Use the setup script for one-off tasks or rapid prototyping.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/vshrinath/ai-core-skills/main/setup.sh | bash
+curl -sSL https://raw.githubusercontent.com/vshrinath/virtual-product-factory/main/setup.sh | bash
 ```
 
 ### 🛠️ How `setup.sh` Works
@@ -99,4 +99,4 @@ The setup script detects your environment and **symlinks** the relevant skill fi
 
 ---
 
-MIT License • 2026 AI Core Skills
+MIT License • 2026 The Virtual Product Factory

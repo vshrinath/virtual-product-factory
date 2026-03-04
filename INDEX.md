@@ -1,4 +1,4 @@
-# AI Core Skills: The Virtual Product Factory Index
+# The Virtual Product Factory Index
 
 **28 highly transferable skills (85%+ portability) + 1 framework-specific skill (Remotion)**
 
@@ -194,7 +194,7 @@ I need to add user authentication. Help me scope it first, then design and imple
 
 ```bash
 # New project setup
-git submodule add https://github.com/vshrinath/ai-core-skills.git skills
+git submodule add https://github.com/vshrinath/virtual-product-factory.git skills
 git submodule update --init
 
 # Load core skills for any project
