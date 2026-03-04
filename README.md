@@ -9,23 +9,14 @@ The Virtual Product Factory is an autonomous product engineering department in a
 ## 🏗️ Departmental Overview
 *One glance at the Factory's capabilities.*
 
-```mermaid
-graph TD
-    PO[1. PRODUCT OFFICE] --> EH[2. ENGINEERING HUB]
-    PO --> IL[4. INFRA LAB]
-    EH --> QL[3. QUALITY LAB]
-    IL --> GS[5. GROWTH STUDIO]
-    GS --> MO[6. META OFFICE]
-    QL --> EH
-
-    %% Skills Lists
-    PO --- S1("@pm, @task-decomposition, @decision-framework, @ux, @accessibility")
-    EH --- S2("@arch, @dev, @api-design, @data-modeling, @git-workflow")
-    QL --- S3("@guard, @qa, @testing, @self-review, @performance, @debugging, @refactoring")
-    IL --- S4("@cloud, @cicd, @deployment")
-    GS --- S5("@writer, @seo, @perf, @video-ai, @video")
-    MO --- S6("@memory, @error-recovery, @confidence-scoring, @context-strategy")
-```
+| Department | Focus | Core Skills |
+| :--- | :--- | :--- |
+| **1. Product Office** | Strategy & UX | `@pm`, `@task-decomposition`, `@decision-framework`, `@ux`, `@accessibility` |
+| **2. Engineering Hub** | Build | `@arch`, `@dev`, `@api-design`, `@data-modeling`, `@git-workflow` |
+| **3. Quality & Safety Lab**| Verification & Perf | `@guard`, `@qa`, `@testing`, `@self-review`, `@performance`, `@frontend-perf`, `@debugging`, `@refactoring` |
+| **4. Infra Lab** | Cloud & DevOps | `@cloud`, `@cicd`, `@deployment` |
+| **5. Growth Studio** | Launch & SEO | `@writer`, `@seo`, `@perf`, `@video-ai`, `@video` |
+| **6. Meta Office** | Agent Cognition | `@memory`, `@error-recovery`, `@confidence-scoring`, `@context-strategy` |
 
 ---
 
