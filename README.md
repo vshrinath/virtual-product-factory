@@ -9,14 +9,38 @@ The Virtual Product Factory is an autonomous product engineering department in a
 ## 🏗️ Departmental Overview
 *One glance at the Factory's capabilities.*
 
-| Department | Focus | Core Skills |
-| :--- | :--- | :--- |
-| **1. Product Office** | Strategy & UX | `@pm`, `@task-decomposition`, `@decision-framework`, `@ux`, `@accessibility` |
-| **2. Engineering Hub** | Build | `@arch`, `@dev`, `@api-design`, `@data-modeling`, `@git-workflow` |
-| **3. Quality & Safety Lab**| Verification & Perf | `@guard`, `@qa`, `@testing`, `@self-review`, `@performance`, `@frontend-perf`, `@debugging`, `@refactoring` |
-| **4. Infra Lab** | Cloud & DevOps | `@cloud`, `@cicd`, `@deployment` |
-| **5. Growth Studio** | Launch & SEO | `@writer`, `@seo`, `@perf`, `@video-ai`, `@video` |
-| **6. Meta Office** | Agent Cognition | `@memory`, `@error-recovery`, `@confidence-scoring`, `@context-strategy` |
+```text
+                           virtual-product-factory
+                      (Build at the Speed of Decision)
+                                     │
+         ┌───────────────────────────┼───────────────────────────┐
+         ▼                           ▼                           ▼
+ ┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────────────┐
+ │ 1. PRODUCT OFFICE     │   │ 2. ENGINEERING HUB    │   │ 3. QUALITY & SAFETY   │
+ │    (Strategy & UX)    │   │    (Build)            │   │    (Verify & Perf)    │
+ ├───────────────────────┤   ├───────────────────────┤   ├───────────────────────┤
+ │ @pm                   │   │ @arch                 │   │ @guard                │
+ │ @task-decomposition   │   │ @dev                  │   │ @qa                   │
+ │ @decision-framework   │   │ @api-design           │   │ @testing              │
+ │ @ux                   │   │ @data-modeling        │   │ @self-review          │
+ │ @accessibility        │   │ @git-workflow         │   │ @performance          │
+ └───────────┬───────────┘   └───────────┬───────────┘   │ @frontend-perf        │
+             │                           │               │ @debugging            │
+             │                           │               │ @refactoring          │
+             ▼                           ▼               └───────────┬───────────┘
+ ┌───────────────────────┐   ┌───────────────────────┐               │
+ │ 4. INFRA LAB          │   │ 5. GROWTH STUDIO      │               │
+ │    (Cloud & DevOps)   │   │    (Launch & SEO)     │               ▼
+ ├───────────────────────┤   ├───────────────────────┤   ┌───────────────────────┐
+ │ @cloud                │   │ @writer               │   │ 6. META OFFICE        │
+ │ @cicd                 │   │ @seo                  │   │    (Agent Cognition)  │
+ │ @deployment           │   │ @perf                 │   ├───────────────────────┤
+ └───────────────────────┘   │ @video-ai             │   │ @memory               │
+                             │ @video                │   │ @error-recovery       │
+                             └───────────────────────┘   │ @confidence-scoring   │
+                                                         │ @context-strategy     │
+                                                         └───────────────────────┘
+```
 
 ---
 
