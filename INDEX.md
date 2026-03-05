@@ -40,6 +40,7 @@
 | Skill | File | Use when | Transferability |
 |-------|------|----------|----------------|
 | `@pm` | `product/pm.md` | Feature scoping, requirements, acceptance criteria | 100% |
+| `@red-team` | `product/red-team.md` | Adversarial spec audit: second-order risks, unsupported assumptions, kill conditions | 100% |
 | `@task-decomposition` | `product/task-decomposition.md` | Breaking features into small, testable tasks with dependencies | 100% |
 | `@decision-framework` | `product/decision-framework.md` | Architecture decisions, high-stakes trade-offs | 100% |
 | `@ux` | `design/ux.md` | User flows, component states, form design | 90% |
