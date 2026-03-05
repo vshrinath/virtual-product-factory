@@ -11,6 +11,23 @@ Run into a problem or have a question? Open an issue — we're happy to help.
 
 ---
 
+## ⚡ Quick Start
+
+Add the factory to your project, then use one of these prompts with your AI agent:
+
+| I want to... | Say this |
+| :--- | :--- |
+| Turn a vague idea into a buildable spec | `Scope this for me: [your idea]` |
+| Audit a spec before committing to build | `Red-team this spec: [paste spec.md]` |
+| Design the architecture for an approved spec | `Design the system for: [paste spec.md]` |
+| Get a security review before merging | `Review this diff for issues: [paste diff]` |
+| Write release notes for a shipped feature | `Draft release notes for: [description]` |
+| Resume a session where you left off | `Resume from memory.md` |
+
+For setup instructions, see [Integration & Onboarding](#-integration--onboarding) below.
+
+---
+
 ## 🏗️ Departmental Overview
 *One glance at the Factory's capabilities.*
 
@@ -42,7 +59,7 @@ Run into a problem or have a question? Open an issue — we're happy to help.
 ```
 
 ## 📖 The Skills Directory
-*What they do and where to find them.*
+*What they do and where to find them. For the authoritative inventory including transferability scores, see [INDEX.md](INDEX.md).*
 
 | Skill | Department | What it does |
 | :--- | :--- | :--- |
@@ -124,11 +141,38 @@ Each transition between departments is powered by a **Handoff Artifact**.
 | Handoff | The "Baton" (Artifact) | Explicit Output |
 | :--- | :--- | :--- |
 | **Product ➔ Arch** | `spec.md` | Scoped features + Acceptance criteria. |
+| **Red-Team ➔ PM** | `red-team-audit.md` | PASS / REVISE / ABANDON verdict + critical flaws. |
 | **Arch ➔ Dev** | `tech-spec.md` | Model schemas + Service boundaries. |
 | **Dev ➔ Guard** | `implementation.diff` | Working code + Verification proof. |
 | **Guard ➔ QA** | `risk-report.md` | Audited code + Performance metrics. |
 
 ---
+
+## 📄 Artifact Registry
+*Every skill has a finish line. This is what each one produces.*
+
+| Skill | Artifact | Format |
+| :--- | :--- | :--- |
+| `@pm` | `spec.md` | Feature brief with problem, acceptance criteria, in/out of scope |
+| `@red-team` | `red-team-audit.md` | Adversarial audit with PASS / REVISE / ABANDON verdict |
+| `@task-decomposition` | Task graph | Dependency DAG appended to `spec.md` or as standalone |
+| `@decision-framework` | ADR | Architecture Decision Record with option comparison and verdict |
+| `@arch` | `tech-spec.md` | Component diagram, data flow map, tradeoffs |
+| `@dev` | Code + proof | Implementation diff + verification results |
+| `@api-design` | API contract | Request/response schemas, error codes, versioning notes |
+| `@data-modeling` | Schema definition | ERD, migration plan, indexing strategy |
+| `@guard` | `risk-report.md` | Severity-ranked findings, or explicit "Pass" |
+| `@qa` | Test report | Test plan + pass/fail results |
+| `@cloud` | IaC files | Terraform/Bicep configs + infrastructure diagram |
+| `@deployment` | Deployment runbook | Rollout steps, rollback procedure, smoke test results |
+| `@seo` | SEO report | Audit findings + implementation checklist (meta, schema) |
+| `@writer` | Draft content | Article, release notes, or documentation page |
+| `@memory` | `memory.md` | Chronological session log, persistent across runs |
+
+> **In-place annotators** — these skills don't produce a new file; they annotate or modify existing artifacts:
+> `@self-review` (critiques the current diff), `@debugging` (annotates the error), `@refactoring` (modifies the code in-place), `@performance` (adds findings inline or to an existing report), `@context-strategy` (summarizes and prunes the active context window).
+
+
 
 ## 🦾 Integration & Onboarding
 

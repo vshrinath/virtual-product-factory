@@ -288,6 +288,28 @@ When instructions conflict:
 
 In short: use skills for role behavior, use `CONVENTIONS.md` for project specifics, and keep `AGENTS.md` as the global guardrail.
 
+### Startup Protocol
+
+**On every session start, load exactly these two files:**
+
+1. `AGENTS.md` — this file. The rules, routing heuristics, and handoff protocol.
+2. `CONVENTIONS.md` — the project's specific tech stack, naming patterns, and known constraints.
+
+**Do not load skill files on startup.** Load them on-demand, immediately before adopting the corresponding role. Unload them on handoff — do not carry skill context across role boundaries.
+
+**On-demand loading trigger:** When you are about to act in a specific role (e.g., you are scoping a feature → load `@pm`), read the skill file first, complete the role's work and produce its artifact, then release the context before handing off.
+
+**Minimum working set for common tasks:**
+
+| Task | Load |
+| :--- | :--- |
+| Starting any new feature | `@pm` |
+| Spec is approved, ready to design | `@arch` |
+| Architecture is done, ready to build | `@dev` |
+| Code is complete, pre-merge check | `@guard` |
+| Auditing a spec before committing to build | `@red-team` |
+| Cross-session memory / state resume | `@memory` |
+
 ### Default Routing Policy
 
 Use the lightest viable path first:
@@ -305,8 +327,11 @@ When renaming or retiring a skill:
 
 ### Available Skills by Department
 
-**1. Product Office (Strategy \u0026 UX)** — `skills/product/` \u0026 `skills/design/`:
-- `@pm` — Feature scoping, requirements, acceptance criteria (includes defining "done")
+> **Canonical source**: [`INDEX.md`](INDEX.md) is the authoritative skill inventory. The list below is a routing summary. If there is a discrepancy, INDEX.md wins.
+
+**1. Product Office (Strategy & UX)** — `product/` & `design/`:
+- `@pm` — Feature scoping, requirements, acceptance criteria
+- `@red-team` — Adversarial spec audit before build begins
 - `@task-decomposition` — Breaking features into small, testable tasks
 - `@decision-framework` — Architecture decisions, build vs. buy, technical debt
 - `@ux` — User flows, component states, accessibility, form design
