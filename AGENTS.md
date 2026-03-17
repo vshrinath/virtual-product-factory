@@ -372,6 +372,24 @@ When renaming or retiring a skill:
 - `@context-strategy` — Efficient file navigation and context management
 - `@error-recovery` — Handling test/build/deployment failures autonomously
 
+### Workflow State Machine
+
+For autonomous agents: determine current pipeline state by checking which artifacts exist, then invoke the next skill. Check in order — stop at the first unmet condition.
+
+| State | Condition | Next skill | Produces |
+|-------|-----------|------------|----------|
+| Not started | No `spec.md` | `@pm` | `spec.md` |
+| Spec ready | `spec.md` exists, no `tech-spec.md` | `@arch` | `tech-spec.md` |
+| Architecture ready | `tech-spec.md` exists, no `implementation-notes.md` | `@dev` | `implementation-notes.md` |
+| Code complete | `implementation-notes.md` exists, no `risk-report.md` | `@guard` | `risk-report.md` |
+| Review failed | `risk-report.md` verdict is `FAIL` | `@dev` (with findings) | updated `implementation-notes.md` |
+| Review passed | `risk-report.md` verdict is `PASS` or `PASS WITH NOTES` | `@qa` | test results |
+| Done | All artifacts exist, tests pass | — | — |
+
+**Gate:** Do not advance past `spec.md` without a `red-team-audit-<feature>.md`. If one doesn't exist, run `@red-team` before `@arch`.
+
+---
+
 ### Workflow Examples
 
 **Building a feature:**
