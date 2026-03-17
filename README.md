@@ -63,37 +63,37 @@ For setup instructions, see [Integration & Onboarding](#-integration--onboarding
 
 | Skill | Department | What it does |
 | :--- | :--- | :--- |
-| **[@pm](product/pm.md)** | Product Office | Defines scope, translates ideas to specs, and explicitly marks what is *out* of scope. |
-| **[@red-team](product/red-team.md)** | Product Office | Audits `spec.md` before build: surfaces second-order risks, unsupported assumptions, and adoption failure points. |
-| **[@task-decomposition](product/task-decomposition.md)** | Product Office | Breaks large features into small, independently deployable iterative slices. |
-| **[@decision-framework](product/decision-framework.md)** | Product Office | Evaluates technical/product decisions using rigid criteria (Cost, Benefit, Reversible). |
-| **[@ux](design/ux.md)** | Product Office | Enforces UI/UX consistency, mobile-first design, and interactive states. |
-| **[@accessibility](design/accessibility.md)** | Product Office | Ensures semantic HTML, ARIA labels, and keyboard navigation compliance. |
-| **[@arch](coding/arch.md)** | Engineering Hub | Designs the technical blueprint (`tech-spec.md`), choosing architecture and boundaries. |
-| **[@dev](coding/dev.md)** | Engineering Hub | Writes working code following the architecture, prioritizing simplicity and testing. |
-| **[@api-design](coding/api-design.md)** | Engineering Hub | Standardizes REST/GraphQL APIs with strict request/response contracts and error handling. |
-| **[@data-modeling](coding/data-modeling.md)** | Engineering Hub | Designs resilient database schemas, indexes, and normalizes/denormalizes data. |
-| **[@git-workflow](coding/git-workflow.md)** | Engineering Hub | Enforces atomic commits, conventional commit messages, and clean branching. |
-| **[@guard](coding/guard.md)** | Quality Lab | The first line of defense: checks for security, sanity, and convention drift. |
-| **[@qa](coding/qa.md)** | Quality Lab | Writes and executes extreme testing scenarios, hunting for edge cases. |
-| **[@testing](coding/testing.md)** | Quality Lab | Implements the standardized testing frameworks and asserts test coverage. |
-| **[@self-review](coding/self-review.md)** | Quality Lab | Forces the agent to critique its own code *before* declaring a task finished. |
-| **[@performance](coding/performance.md)** | Quality Lab | Optimizes backend execution, algorithmic tradeoffs, and resource allocation. |
-| **[@frontend-perf](coding/frontend-perf.md)** | Quality Lab | Audits bundle sizes, render cycles, and Core Web Vitals. |
-| **[@debugging](coding/debugging.md)** | Quality Lab | Methodical, scientific-method-based approach to isolating and squashing bugs. |
-| **[@refactoring](coding/refactoring.md)** | Quality Lab | CLEANS up debt without changing behavior, aiming for simpler abstractions. |
-| **[@cloud](ops/cloud.md)** | Infra Lab | Designs IaC (Terraform/Bicep), serverless scaling, and cloud security architecture. |
-| **[@cicd](ops/cicd-pipelines.md)** | Infra Lab | Automates GitHub Actions, build matrices, and continuous integration gates. |
-| **[@deployment](ops/deployment-practices.md)** | Infra Lab | Executes safe rollouts (blue/green, canary) and environment synchronizations. |
-| **[@writer](marketing/writer.md)** | Growth Studio | Drafts technical documentation, release notes, and product marketing copy. |
-| **[@seo](marketing/seo.md)** | Growth Studio | Implements technical SEO, semantic metadata, and structured data schemas. |
-| **[@perf](marketing/perf.md)** | Growth Studio | (Marketing Perf) Tracks analytics, conversion hooks, and growth metrics. |
-| **[@video-ai](marketing/video-ai.md)** | Growth Studio | Scripts and generates AI-driven video assets or feature walk-throughs. |
-| **[@video](marketing/video.md)** | Growth Studio | General video editing, pacing, and programmatic video creation (e.g. Remotion). |
-| **[@memory](meta/memory.md)** | Meta Office | Maintains a persistent chronological log (`memory.md`) across multiple agent sessions. |
-| **[@error-recovery](meta/error-recovery.md)** | Meta Office | Steps back when stuck, analyzes failure loops, and proposes alternative solutions. |
-| **[@confidence-scoring](meta/confidence-scoring.md)** | Meta Office | Forces the agent to explicitly state its confidence level before making risky assumptions. |
-| **[@context-strategy](meta/context-strategy.md)** | Meta Office | Optimizes the context window by ruthlessly summarizing and dropping irrelevant files. |
+| **[@pm](skills/pm/SKILL.md)** | Product Office | Defines scope, translates ideas to specs, and explicitly marks what is *out* of scope. |
+| **[@red-team](skills/red-team/SKILL.md)** | Product Office | Audits `spec.md` before build: surfaces second-order risks, unsupported assumptions, and adoption failure points. |
+| **[@task-decomposition](skills/task-decomposition/SKILL.md)** | Product Office | Breaks large features into small, independently deployable iterative slices. |
+| **[@decision-framework](skills/decision-framework/SKILL.md)** | Product Office | Evaluates technical/product decisions using rigid criteria (Cost, Benefit, Reversible). |
+| **[@ux](skills/ux/SKILL.md)** | Product Office | Enforces UI/UX consistency, mobile-first design, and interactive states. |
+| **[@accessibility](skills/accessibility/SKILL.md)** | Product Office | Ensures semantic HTML, ARIA labels, and keyboard navigation compliance. |
+| **[@arch](skills/arch/SKILL.md)** | Engineering Hub | Designs the technical blueprint (`tech-spec.md`), choosing architecture and boundaries. |
+| **[@dev](skills/dev/SKILL.md)** | Engineering Hub | Writes working code following the architecture, prioritizing simplicity and testing. |
+| **[@api-design](skills/api-design/SKILL.md)** | Engineering Hub | Standardizes REST/GraphQL APIs with strict request/response contracts and error handling. |
+| **[@data-modeling](skills/data-modeling/SKILL.md)** | Engineering Hub | Designs resilient database schemas, indexes, and normalizes/denormalizes data. |
+| **[@git-workflow](skills/git-workflow/SKILL.md)** | Engineering Hub | Enforces atomic commits, conventional commit messages, and clean branching. |
+| **[@guard](skills/guard/SKILL.md)** | Quality Lab | The first line of defense: checks for security, sanity, and convention drift. |
+| **[@qa](skills/qa/SKILL.md)** | Quality Lab | Writes and executes extreme testing scenarios, hunting for edge cases. |
+| **[@testing](skills/testing/SKILL.md)** | Quality Lab | Implements the standardized testing frameworks and asserts test coverage. |
+| **[@self-review](skills/self-review/SKILL.md)** | Quality Lab | Forces the agent to critique its own code *before* declaring a task finished. |
+| **[@performance](skills/performance/SKILL.md)** | Quality Lab | Optimizes backend execution, algorithmic tradeoffs, and resource allocation. |
+| **[@frontend-perf](skills/frontend-perf/SKILL.md)** | Quality Lab | Audits bundle sizes, render cycles, and Core Web Vitals. |
+| **[@debugging](skills/debugging/SKILL.md)** | Quality Lab | Methodical, scientific-method-based approach to isolating and squashing bugs. |
+| **[@refactoring](skills/refactoring/SKILL.md)** | Quality Lab | CLEANS up debt without changing behavior, aiming for simpler abstractions. |
+| **[@cloud](skills/cloud/SKILL.md)** | Infra Lab | Designs IaC (Terraform/Bicep), serverless scaling, and cloud security architecture. |
+| **[@cicd](skills/cicd/SKILL.md)** | Infra Lab | Automates GitHub Actions, build matrices, and continuous integration gates. |
+| **[@deployment](skills/deployment/SKILL.md)** | Infra Lab | Executes safe rollouts (blue/green, canary) and environment synchronizations. |
+| **[@writer](skills/writer/SKILL.md)** | Growth Studio | Drafts technical documentation, release notes, and product marketing copy. |
+| **[@seo](skills/seo/SKILL.md)** | Growth Studio | Implements technical SEO, semantic metadata, and structured data schemas. |
+| **[@perf](skills/perf/SKILL.md)** | Growth Studio | (Marketing Perf) Tracks analytics, conversion hooks, and growth metrics. |
+| **[@video-ai](skills/video-ai/SKILL.md)** | Growth Studio | Scripts and generates AI-driven video assets or feature walk-throughs. |
+| **[@video](skills/video/SKILL.md)** | Growth Studio | General video editing, pacing, and programmatic video creation (e.g. Remotion). |
+| **[@memory](skills/memory/SKILL.md)** | Meta Office | Maintains a persistent chronological log (`memory.md`) across multiple agent sessions. |
+| **[@error-recovery](skills/error-recovery/SKILL.md)** | Meta Office | Steps back when stuck, analyzes failure loops, and proposes alternative solutions. |
+| **[@confidence-scoring](skills/confidence-scoring/SKILL.md)** | Meta Office | Forces the agent to explicitly state its confidence level before making risky assumptions. |
+| **[@context-strategy](skills/context-strategy/SKILL.md)** | Meta Office | Optimizes the context window by ruthlessly summarizing and dropping irrelevant files. |
 
 ---
 

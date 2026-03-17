@@ -30,7 +30,7 @@ const PKG_DIR = path.resolve(__dirname, '..');
 const CWD = process.cwd();
 
 function isSourceRepo() {
-  const dirs = ['coding', 'product', 'marketing', 'design', 'meta', 'ops'];
+  const dirs = ['skills'];
   const files = ['INDEX.md', 'AGENTS.md'];
   return (
     dirs.every((d) => fs.existsSync(path.join(CWD, d))) &&
@@ -147,12 +147,34 @@ function setupAllTools() {
   success('All AI tools configured (symlinked to AGENTS.md)');
 }
 
+function setupClaudeCode(sourceDir) {
+  info('Setting up Claude Code skills…');
+
+  const claudeSkillsDir = path.join(CWD, '.claude', 'skills');
+  fs.mkdirSync(claudeSkillsDir, { recursive: true });
+
+  const skillsSrc = path.join(sourceDir, 'skills');
+  if (fs.existsSync(skillsSrc)) {
+    for (const entry of fs.readdirSync(skillsSrc)) {
+      const entryPath = path.join(skillsSrc, entry);
+      if (fs.statSync(entryPath).isDirectory()) {
+        const linkPath = path.join(claudeSkillsDir, entry);
+        const rel = path.relative(claudeSkillsDir, entryPath);
+        symlink(rel, linkPath);
+      }
+    }
+    success('Skills symlinked to .claude/skills/');
+  } else {
+    warn('skills/ not found in source — skipping Claude Code setup.');
+  }
+}
+
 function setupKiro(sourceDir) {
   info('Setting up Kiro configuration…');
 
   fs.mkdirSync(path.join(CWD, '.kiro', 'skills'), { recursive: true });
 
-  if (fs.existsSync(path.join(sourceDir, 'coding'))) {
+  if (fs.existsSync(path.join(sourceDir, 'skills'))) {
     // Symlink the entire source dir under .kiro/skills
     const kiroSkills = path.join(CWD, '.kiro', 'skills');
     // Remove existing symlink/dir and replace
@@ -218,9 +240,12 @@ function cmdInit(argv) {
   // 3. Tool integrations
   if (toolsArg === 'all') {
     setupAllTools();
+    setupClaudeCode(sourceDir);
     setupKiro(sourceDir);
   } else if (toolsArg === 'kiro') {
     setupKiro(sourceDir);
+  } else if (toolsArg === 'claude') {
+    setupClaudeCode(sourceDir);
   } else {
     warn(`Unknown --tools value: ${toolsArg}`);
   }
@@ -232,6 +257,7 @@ function cmdInit(argv) {
   console.log('   3. Add brand assets to brand/assets/');
   console.log('   4. Commit the changes\n');
   console.log('🔧 All AI tools now read from AGENTS.md as the canonical source.');
+  console.log('🤖 Claude Code skills are in .claude/skills/ — auto-triggered, no manual invocation needed.');
   console.log('📚 Available skills: see INDEX.md for the full skill reference.\n');
 }
 
@@ -249,7 +275,7 @@ Commands:
 
 Options (for init):
   --clone       Clone the skills repo instead of adding a git submodule
-  --tools <t>   Which tool integrations to configure: all (default) | kiro
+  --tools <t>   Which tool integrations to configure: all (default) | kiro | claude
 
 Examples:
   npx virtual-product-factory               # init with defaults (git submodule)
