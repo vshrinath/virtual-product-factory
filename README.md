@@ -176,7 +176,29 @@ Each transition between departments is powered by a **Handoff Artifact**.
 
 ## 🦾 Integration & Onboarding
 
-### 1. Production Method: Git Submodule (Recommended)
+### 1. One-liner: npx (Recommended)
+No install needed. Run from your project root:
+
+```bash
+npx virtual-product-factory
+```
+
+This sets up the factory as a git submodule and configures all AI tools (Cursor, Copilot, Windsurf, Claude, Gemini, Kiro) in one shot.
+
+**Options:**
+
+```bash
+# Use a plain clone instead of a git submodule
+npx virtual-product-factory init --clone
+
+# Configure Kiro only
+npx virtual-product-factory init --tools kiro
+
+# Show all options
+npx virtual-product-factory help
+```
+
+### 2. Production Method: Git Submodule
 Add the factory as a submodule for project-specific version control.
 
 ```bash
@@ -184,7 +206,7 @@ git submodule add https://github.com/vshrinath/virtual-product-factory.git .vpf
 git submodule update --init --recursive
 ```
 
-### 2. Quick Start: Curl
+### 3. Quick Start: Curl
 Use the setup script for rapid prototyping or global utility.
 
 ```bash
