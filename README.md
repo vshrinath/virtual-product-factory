@@ -2,12 +2,24 @@
 
 **Build at the Speed of Decision.**
 
-A collection of AI agent skills focused on autonomous product engineering. Built for technical founders, developers, and product managers who want AI coding agents to operate like a structured, high-functioning team—transforming raw requirements into launched products. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports markdown-based context.
+A coherence layer for multi-tool AI development. When you switch between Claude Code, Cursor, Codex, and Windsurf on the same codebase, each tool makes decisions independently — and the codebase drifts. VPF solves this by giving every AI tool a shared rulebook: 32 specialized skills, a single `CONVENTIONS.md` customization point, and a handoff protocol that keeps artifacts consistent from spec to deployment.
+
+Built for technical founders and developers who ship with multiple AI tools and need the output to look like one team built it — not five.
 
 Built by [Shrinath V](https://www.linkedin.com/in/shrinathv). Want a deeper dive into the philosophy behind this? Read the manifesto at [Blindspots & Big Bets](https://blindspotsbigbets.substack.com).
 
 **Contributions welcome!** Found a way to improve a skill or have a new one to add? Open a PR.
 Run into a problem or have a question? Open an issue — we're happy to help.
+
+---
+
+## Why this exists
+
+AI coding tools are genuinely useful individually. The problem is compound: when you use Claude Code for architecture, Cursor for feature work, and Codex for refactoring, each one makes stylistic and structural decisions in isolation. After a few weeks, the codebase carries the fingerprints of five different "opinions" — inconsistent naming, conflicting patterns, architecture that no single tool fully understands.
+
+VPF started as an abstraction from solving this problem on real projects. The solution is a shared context layer — `AGENTS.md` as a tool-agnostic rulebook that every major AI tool reads natively, `CONVENTIONS.md` as a single file capturing your stack's specific decisions, and skills as scoped role definitions that prevent an agent from overstepping into territory it shouldn't touch.
+
+The artifact chain (`spec.md → tech-spec.md → implementation-notes.md → risk-report.md`) acts as a state machine: any tool that picks up the project can detect where it is in the pipeline and proceed without being retold the full history.
 
 ---
 
@@ -218,7 +230,7 @@ curl -sSL https://raw.githubusercontent.com/vshrinath/virtual-product-factory/ma
 ## 🗺️ Navigation
 - **[AGENTS.md](AGENTS.md)**: The full operational manual and rules.
 - **[CONVENTIONS.md](CONVENTIONS.md)**: Your project's unique "Source of Truth."
-- **[INDEX.md](INDEX.md)**: Technical reference of all 28+ skills.
+- **[INDEX.md](INDEX.md)**: Technical reference of all 32 skills.
 
 ---
 
