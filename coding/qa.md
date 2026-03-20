@@ -21,23 +21,20 @@
 
 ## Verification Protocol
 
-### Before claiming tests pass:
+### Step 0: Load checklist and project state
 
-1. **Run the full test suite** (not just the tests you wrote)
+1. Load `coding/references/qa-checklist.md` — this is the verification standard for this pass. Every item applies unless explicitly overridden.
+2. Read `.project/stories.md` — identify which story is being verified and confirm its acceptance criteria. **DO NOT proceed if the story is not listed or its acceptance criteria are missing.**
+3. Read `.project/bugs.md` — check for open `error`-severity bugs against this story. **DO NOT mark a story complete if any `error`-severity bug for it remains open.**
+
+### Step 1: Execute tests
+
+1. **Run the full test suite** (not just the tests written for this story)
 2. **Check for warnings and deprecations** (not just failures)
 3. **Verify coverage meets thresholds** (if project has coverage requirements)
 4. **Report results with evidence** (test count, pass/fail, coverage %)
 
-### Test verification checklist:
-
-```
-□ All tests pass (no failures, no errors)
-□ No new warnings or deprecations introduced
-□ Coverage meets project threshold (if applicable)
-□ Tests run in isolation (no order dependencies)
-□ Tests clean up after themselves (no side effects)
-□ Edge cases covered (empty, null, boundary values, errors)
-```
+Apply every checklist item from `coding/references/qa-checklist.md`. Report evidence for each section.
 
 ### Reporting test results:
 
@@ -101,12 +98,22 @@ Result: No regressions detected
 - Place tests in the directory and with the naming pattern the project already uses
 - Cover: happy path, edge cases (empty, null, boundary values), and error cases
 
+## Project state update
+
+**After tests pass and all checklist items are satisfied:**
+
+1. If all acceptance criteria for the story are met → invoke `@project` to mark the story `[x]` in `.project/stories.md` with today's date
+2. If any bugs were found during verification → log each one to `.project/bugs.md` with correct severity before concluding
+3. **DO NOT declare the workflow complete if any `error`-severity bug is open for this story**
+
 ## Handoffs
-- **To `@dev`** → With actionable test results and failure analysis
-- Workflow complete after tests pass
+- **To `@dev`** → With actionable test results, failure analysis, and bug log entries from `.project/bugs.md`
+- **To `@project`** → To update story completion status when all criteria pass
+- Workflow complete after tests pass and project state is updated
 
 ## Output
 - Structured test results and failure analysis
 - Coverage summary with gaps identified
 - Edge case documentation
 - Regression notes
+- Updated `.project/stories.md` (story marked complete) or `.project/bugs.md` (bugs logged)

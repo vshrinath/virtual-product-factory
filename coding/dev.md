@@ -88,6 +88,15 @@ export async function captureException(error: unknown): Promise<void> {
 - Dependencies needed at build time
 - Simple utilities (just import them normally)
 
+## Project State Check
+
+**Before starting any implementation, check `.project/stories.md`:**
+
+- If `.project/stories.md` exists → read it. Identify which story this task corresponds to. Confirm the story is marked `[ ]` (not already complete). Proceed only for stories that are in scope.
+- If `.project/stories.md` does not exist → proceed, but note that no project state is being tracked. Suggest the user invoke `@pm` → `@project` to initialize state for future work.
+
+**DO NOT implement a story already marked `[x]` in `.project/stories.md` without first confirming with the user that a change or re-implementation is intentional.**
+
 ## Verification Protocol
 
 ### Before starting any implementation:

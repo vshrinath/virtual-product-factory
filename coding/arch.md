@@ -23,10 +23,19 @@
 - Can visualize dependency graphs and edit documentation
 - May propose structural changes — defer implementation to `@dev`
 
-## Technical Feasibility Check
-**This is step zero. Run before designing anything.**
+## Project State Check
+**This is step zero. Run before anything else.**
 
-Before sketching any architecture, cross-reference the `spec.md` against the project's actual stack (from `CONVENTIONS.md` or equivalent). Answer these four questions explicitly in the architecture summary:
+Check whether `.project/requirements.md` exists.
+- If it exists → read it in full. Your design must stay within the stated scope. Flag any architectural decision that contradicts the recorded out-of-scope list.
+- If it does not exist → **DO NOT proceed with design.** Ask the user: "I don't see a `.project/requirements.md`. Should `@pm` define the scope first, or do you want to proceed without a formal requirements record?"
+
+**DO NOT hand off an architecture to `@dev` if `.project/requirements.md` contains unresolved open questions.**
+
+## Technical Feasibility Check
+**Run after loading project state, before sketching anything.**
+
+Cross-reference `.project/requirements.md` (or the user's spec if no project state exists) against the project's actual stack (from `CONVENTIONS.md` or equivalent). Answer these four questions explicitly in the architecture summary:
 
 1. **Stack alignment** — Does the described feature require any dependency, framework, or service not already in the project stack? If yes, name it and state whether it's a minor addition or a significant new dependency.
 2. **Data model impact** — Does the spec require changes to existing models or schemas? If yes, assess migration complexity (trivial / additive / breaking).

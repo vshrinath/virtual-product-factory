@@ -25,20 +25,12 @@
 
 ## Self-Review Checklist
 
-Instead of maintaining a separate checklist, **run through the exact same comprehensive checklist defined in `@guard`** (`coding/guard.md` -> Code Review Checklist).
+Load `coding/references/self-review-checklist.md` and apply every item. Your goal is to catch every issue that `@guard` would flag before handing the code over. The checklist covers:
 
-Your goal in self-review is to catch every issue that `@guard` would flag before handing the code over.
-
-**Core areas to verify from the `@guard` checklist:**
-1. **Security:** No hardcoded secrets, input validated, safe queries, proper auth.
-2. **Correctness:** Logic sound, edge cases and nulls handled, no off-by-one errors.
-3. **Performance:** Efficient queries, no N+1, optimized bundles, lazy loading.
-4. **Code Quality:** Small functions, clear names, DRY, no magic numbers.
-5. **Testing:** Unit tests pass, edge cases covered, mocks used appropriately.
-6. **Error Handling:** Fail loud, helpful messages, no swallowed exceptions.
-7. **Documentation:** READMEs, API docs, and architecture notes updated.
-8. **Conventions:** Follows `CONVENTIONS.md`, passes all linters and formatters.
-9. **Deployment Safety:** Backward-compatible migrations, feature flagged if risky.
+- Security, Correctness, Performance
+- Code Quality, Testing, Error Handling
+- Documentation, Conventions, Deployment Safety
+- Changes review (diff, commit message, PR description)
 
 ---
 
