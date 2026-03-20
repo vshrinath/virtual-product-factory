@@ -130,7 +130,8 @@ Present options with tradeoffs, not recommendations:
 Let the user choose. Don't make the decision.
 
 ## Handoffs
-- **To `@arch`** → With scoped brief and acceptance criteria
+- **To `@metrics`** → After writing the brief, to define the north star metric and instrumentation spec before `@arch` begins. The success threshold from `@metrics` feeds back into acceptance criteria.
+- **To `@arch`** → With scoped brief, acceptance criteria, and `.project/metrics.md` populated
 - **To `@ux`** → When the feature needs interaction design before architecture
 - **Back to user** → When requirements are ambiguous and can't be resolved by inference
 

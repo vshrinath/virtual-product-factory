@@ -12,6 +12,7 @@
 |-------|-------------|---------|
 | [`@pm`](product/pm.md) | Translates vague ideas into scoped, testable specs. Asks clarifying questions. Marks in/out of scope explicitly. | `spec.md` |
 | [`@red-team`](product/red-team.md) | Adversarial audit of a spec before build. Identifies second-order risks, unsupported assumptions, and adoption failure points. | `red-team-audit-<feature>.md` |
+| [`@metrics`](product/metrics.md) | Defines the north star metric, activation event, instrumentation spec, and success threshold before build. Measures actual vs. expected after launch. | `.project/metrics.md` + launch report |
 | [`@task-decomposition`](product/task-decomposition.md) | Breaks an approved spec into small, independently shippable tasks with dependencies mapped. | Task graph (appended to `spec.md` or standalone) |
 | [`@decision-framework`](product/decision-framework.md) | Evaluates competing technical or product options using explicit criteria. Forces a documented decision. | ADR (Architecture Decision Record) |
 | [`@ux`](design/ux.md) | Produces user flows, component states, and interaction specs. Catches usability issues before build. | UX spec / annotated flow |
@@ -66,6 +67,7 @@
 | [`@confidence-scoring`](meta/confidence-scoring.md) | Assesses confidence level and risk before acting on low-certainty tasks. | Confidence report (inline) |
 | [`@context-strategy`](meta/context-strategy.md) | Manages limited context window — decides what to load and what to release. | Pruned context summary |
 | [`@error-recovery`](meta/error-recovery.md) | Handles test, build, or deployment failures autonomously without human escalation. | Recovery log (inline) |
+| [`@postmortem`](meta/postmortem.md) | Blameless retrospective after incidents or underperforming features. 5 Whys root cause → concrete process changes. | `postmortem-YYYY-MM-DD-<slug>.md` |
 
 ---
 
@@ -75,6 +77,7 @@ Secondary skills are invoked *alongside* a primary skill, not instead of one.
 
 | If you're doing... | Also invoke |
 |--------------------|-------------|
+| Scoping any new feature | `@metrics` (define success before build) |
 | Implementation touching the API | `@api-design` |
 | Implementation changing models or schema | `@data-modeling` |
 | Backend implementation on hot paths | `@performance` |
@@ -88,23 +91,30 @@ Secondary skills are invoked *alongside* a primary skill, not instead of one.
 | Large codebase navigation | `@context-strategy` |
 | Handling failures mid-task | `@error-recovery` |
 | Multi-day or complex tasks | `@memory` |
+| Feature underperformed or incident occurred | `@postmortem` |
 
 ---
 
 ## Handoff Chain
 
 ```
-@pm          →  spec.md: problem, acceptance criteria, in/out of scope
-  @red-team  →  red-team-audit.md: PASS / REVISE / ABANDON (gate — required)
-    @ux       →  UX spec: user flows, component states
-      @arch   →  tech-spec.md: system design, service boundaries
-        @dev  →  Working implementation
-          @self-review  →  Pre-handoff quality check
-            @guard  →  risk-report.md: security, correctness, conventions
-              @qa   →  Test report: edge cases, coverage, regressions
+@pm          →  .project/: requirements, stories
+  @metrics   →  .project/metrics.md: north star, instrumentation spec, threshold
+    @red-team  →  red-team-audit.md: PASS / REVISE / ABANDON (gate — required)
+      @ux       →  UX spec: user flows, component states
+        @arch   →  tech-spec.md: system design, service boundaries
+          @dev  →  Working implementation (reads instrumentation spec)
+            @self-review  →  Pre-handoff quality check
+              @guard  →  risk-report.md: security, correctness, conventions
+                @qa   →  Test report + .project/ story status updated
+
+                  [ship]
+
+                @metrics  →  Post-launch measurement: actual vs. threshold
+                  @postmortem  →  (if ❌ / ⚠️) Root cause → process changes
 ```
 
-**Skip steps that don't apply.** A bug fix starts at `@debugging → @dev → @guard`. A content task starts at `@writer → @seo`. `@error-recovery` is not sequential — invoke it any time a build, test, or deployment fails.
+**Skip steps that don't apply.** A bug fix starts at `@debugging → @dev → @guard`. A content task starts at `@writer → @seo`. `@error-recovery` is for real-time unblocking — `@postmortem` is for learning after the fact. Both can run; neither replaces the other.
 
 ---
 
